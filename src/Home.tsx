@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 const Heart: React.FC<{ color: string }> = ({ color }) => (
   <span
@@ -30,6 +31,7 @@ const LoveText: React.FC<{ color: string }> = ({ color }) => (
 );
 
 const App: React.FC = () => {
+  const nav = useNavigate()
   const [name, setName] = React.useState<string>('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,8 +40,8 @@ const App: React.FC = () => {
 
   const handleClick = () => {
     if (name.toLowerCase() === 'lucky' || name.toLowerCase() === 'luck') {
+      nav('/happy-day')
       
-      window.location.href = '/happy-day';
     } else {
       alert('Please enter Lucky or Luck as your name!');
     }
