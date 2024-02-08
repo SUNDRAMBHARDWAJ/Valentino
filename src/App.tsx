@@ -11,8 +11,6 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/happy-day" element={<HappyDay name={'Lucky Bhardwaj'}/>} />
-          
-
         </Routes>
       </div>
     </Router>
